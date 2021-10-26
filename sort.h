@@ -4,6 +4,23 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#ifndef TRUE
+#define TRUE 1
+#endif
+#ifndef FALSE
+#define FALSE 0
+#endif
+#ifndef UNDEF
+#define UNDEF -1
+#endif
+#ifndef SWAP
+#define SWAP(array, a, b) \
+{                       \
+tmp = array[a];       \
+array[a] = array[b];  \
+array[b] = tmp;       \
+}
+#endif
 /**
  * struct listint_s - Doubly linked list node
  *
@@ -13,9 +30,9 @@
  */
 typedef struct listint_s
 {
-	const int n;
-	struct listint_s *prev;
-	struct listint_s *next;
+const int n;
+struct listint_s *prev;
+struct listint_s *next;
 } listint_t;
 
 void print_array(const int *array, size_t size);
